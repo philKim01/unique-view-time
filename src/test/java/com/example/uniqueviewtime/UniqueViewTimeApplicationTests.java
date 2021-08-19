@@ -8,12 +8,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class UniqueViewTimeApplicationTests {
 
-	UniqueViewTime uVTTest = new UniqueViewTime();
-
 	@Test
 	void testingUVT() {
 
 		// given
+		UniqueViewTime uVTTest = new UniqueViewTime();
 		ViewFragment firstFragment = new ViewFragment(0.0, 1.1);
 		ViewFragment secondFragment = new ViewFragment(2.5, 5.6);
 
