@@ -2,33 +2,33 @@ package com.example.uniqueviewtime;
 
 public class ViewFragment {
 
-  private Double startTime;
-  private Double endTime;
+  private int startTime;
+  private int endTime;
 
   // Constructors
   public ViewFragment() {
 
   }
 
-  public ViewFragment(Double startTime, Double endTime) {
+  public ViewFragment(int startTime, int endTime) {
     this.startTime = startTime;
     this.endTime = endTime;
   }
 
   // Getters and Setters
-  public Double getStartTime() {
+  public int getStartTime() {
     return this.startTime;
   }
 
-  public void setStartTime(Double startTime) {
+  public void setStartTime(int startTime) {
     this.startTime = startTime;
   }
 
-  public Double getEndTime() {
+  public int getEndTime() {
     return this.endTime;
   }
 
-  public void setEndTime(Double endTime) {
+  public void setEndTime(int endTime) {
     this.endTime = endTime;
   }
 }

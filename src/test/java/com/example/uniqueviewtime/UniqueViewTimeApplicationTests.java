@@ -10,22 +10,59 @@ class UniqueViewTimeApplicationTests {
 
 	@Test
 	void testingUVT() {
-
 		// given
 		UniqueViewTime uVTTest = new UniqueViewTime();
-		ViewFragment firstFragment = new ViewFragment(0.0, 1.1);
-		ViewFragment secondFragment = new ViewFragment(2.5, 5.6);
+		ViewFragment firstFragment = new ViewFragment(0, 5000);
+		ViewFragment secondFragment = new ViewFragment(5000, 6000);
 
 		ViewFragment arr[] = new ViewFragment[2];
 		arr[0] = firstFragment;
 		arr[1] = secondFragment;
 
 		// when
-		Double uVTResult = uVTTest.uniqueViewTimeCalculator(arr);
+		int uVTResult = uVTTest.uniqueViewTimeCalculator(arr);
 
 		// Expect
-		assertEquals(4.2, uVTResult);
+		assertEquals(6000, uVTResult);
+	}
 
+	@Test
+	void uVTTestWithOverlap() {
+
+		// Given
+		UniqueViewTime uVTTest = new UniqueViewTime();
+
+		ViewFragment firstFragment = new ViewFragment(0, 3300);
+		ViewFragment secondFragment = new ViewFragment(1500, 4500);
+		ViewFragment thirdFragment = new ViewFragment(4000, 5000);
+
+		ViewFragment arr[] = new ViewFragment[3];
+		arr[0] = firstFragment;
+		arr[1] = secondFragment;
+		arr[2] = thirdFragment;
+
+		// Expect
+		int uVTResult = uVTTest.uniqueViewTimeCalculator(arr);
+		assertEquals(5000, uVTResult);
+	}
+
+	@Test
+	void uVTTestWithGap() {
+		// Given
+		UniqueViewTime uVTTest = new UniqueViewTime();
+
+		ViewFragment firstFragment = new ViewFragment(0, 3300);
+		ViewFragment secondFragment = new ViewFragment(1500, 3500);
+		ViewFragment thirdFragment = new ViewFragment(4500, 5000);
+
+		ViewFragment arr[] = new ViewFragment[3];
+		arr[0] = firstFragment;
+		arr[1] = secondFragment;
+		arr[2] = thirdFragment;
+
+		// Expect
+		int uVTResult = uVTTest.uniqueViewTimeCalculator(arr);
+		assertEquals(4000, uVTResult);
 	}
 
 }

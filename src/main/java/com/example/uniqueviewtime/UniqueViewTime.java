@@ -6,17 +6,13 @@ import java.util.Comparator;
 
 public class UniqueViewTime {
 
-  public Double uniqueViewTimeCalculator(ViewFragment arr[]) {
+  public int uniqueViewTimeCalculator(ViewFragment arr[]) {
 
     Stack<ViewFragment> stack = new Stack<>();
 
     Arrays.sort(arr, new Comparator<ViewFragment>() {
       public int compare(ViewFragment i1, ViewFragment i2) {
-        if (i1.getStartTime() < i2.getStartTime())
-          return -1;
-        if (i1.getStartTime() > i2.getStartTime())
-          return 1;
-        return 0;
+        return i1.getStartTime() - i2.getStartTime();
       }
     });
 
@@ -32,11 +28,11 @@ public class UniqueViewTime {
         stack.push(top);
       }
     }
-    Double totalUVT = 0.0;
+    int totalUVT = 0;
 
     while (!stack.isEmpty()) {
       ViewFragment t = stack.pop();
-      Double fragmentUVT = t.getEndTime() - t.getStartTime();
+      int fragmentUVT = t.getEndTime() - t.getStartTime();
 
       totalUVT += fragmentUVT;
     }
