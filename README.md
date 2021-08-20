@@ -19,10 +19,12 @@ You can add video fragments to a Video by sending a POST request to http://local
 _____
 example: 
 sending a POST request to http://localhost:8080/api/videofragment/1 with the json object below
+
 {
 	"startTime": 45000,
 	"endTime": 70000
 }
+
 will add a video fragment that has a start time of 45 seconds and end time of 70 seconds to the video with the id of 1.
 
 to then see video 1's uvt you would send a GET request to http://localhost:8080/api/video/1 and the uvt in milliseconds will be returned.
