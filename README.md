@@ -6,9 +6,13 @@ MVP: 2 classes (ViewFragment & UniqueViewTime) UniqueViewTime contains a method 
 Instructions to run:
 
 This very well might have been bad practice but I took the target folder off of my .gitignore file. To run the program you should now be able to cd into the target folder and run the unique-view-time jar file.
+
 To call the api's I just used postman/insomnia by sending requests to http://localhost:8080/api/
+
 To get a video's UTV you can send a GET request to http://localhost:8080/api/video/:videoId
+
 You can create a Video by sending a POST request to http://localhost:8080/api/video/ with a json object containing a "url" key.
+
 You can add video fragments to a Video by sending a POST request to http://localhost:8080/api/viewfragments/:videoId with a json object with a "startTime" and "endTime" key that holds a int value that would be the time in milliseconds. The "videoId" path variable would be the id of the video that you want to add the view fragment to.
 
 I apologize if this readme is written incorrectly. I wasnt sure what goes into a readme file.
