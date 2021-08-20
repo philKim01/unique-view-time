@@ -33,6 +33,14 @@ public class VideoController {
     return videoService.getVideos();
   }
 
+  @GetMapping(path = "{videoId}")
+  public int getVideoUVT(@PathVariable("videoId") Long videoId) {
+    Optional<Video> videoData = videoRepository.findById(videoId);
+    Video _video = videoData.get();
+    return _video.getUniqueViewTime();
+
+  }
+
   @PostMapping
   public void postNewVideo(@RequestBody Video video) {
     videoService.addNewVideo(video);

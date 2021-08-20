@@ -1,11 +1,11 @@
 package com.example.uniqueviewtime;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+// import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import com.example.uniqueviewtime.video.Video;
-import com.example.uniqueviewtime.viewFragment.ViewFragment;
+// import com.example.uniqueviewtime.video.Video;
+// import com.example.uniqueviewtime.viewFragment.ViewFragment;
 
-import org.junit.jupiter.api.Test;
+// import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
