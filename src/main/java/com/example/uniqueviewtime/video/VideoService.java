@@ -18,10 +18,12 @@ public class VideoService {
     return videoRepository.findAll();
   }
 
+  // adds video to the repository
   public void addNewVideo(Video video) {
     videoRepository.save(video);
   }
 
+  // deletes video from the repository by ID
   public void deleteVideo(Long id) {
     boolean exists = videoRepository.existsById(id);
 

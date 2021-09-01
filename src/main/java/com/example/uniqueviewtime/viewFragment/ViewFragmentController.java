@@ -30,11 +30,13 @@ public class ViewFragmentController {
   @Autowired
   ViewFragmentRepository viewFragmentRepository;
 
+  // GET /api/viewfragments
   @GetMapping
   public List<ViewFragment> getViewFragments() {
     return viewFragmentService.getViewFragments();
   }
 
+  // POST /api/viewfragments/:id
   @PostMapping(path = "{VideoId}")
   public ResponseEntity<ViewFragment> postNewViewFragment(@PathVariable("VideoId") Long videoId,
       @RequestBody ViewFragment viewFragment) {

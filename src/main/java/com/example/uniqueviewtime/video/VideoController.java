@@ -28,11 +28,13 @@ public class VideoController {
   @Autowired
   VideoRepository videoRepository;
 
+  // GET /api/video
   @GetMapping
   public List<Video> getVideos() {
     return videoService.getVideos();
   }
 
+  // GET /api/video/:id
   @GetMapping(path = "{videoId}")
   public int getVideoUVT(@PathVariable("videoId") Long videoId) {
     Optional<Video> videoData = videoRepository.findById(videoId);
@@ -41,16 +43,19 @@ public class VideoController {
 
   }
 
+  // POST /api/video
   @PostMapping
   public void postNewVideo(@RequestBody Video video) {
     videoService.addNewVideo(video);
   }
 
+  // DELETE /api/video/:id
   @DeleteMapping(path = "{videoId}")
   public void deleteVideo(@PathVariable("videoId") Long videoId) {
     videoService.deleteVideo(videoId);
   }
 
+  // UPDATE /api/video/:id
   @PutMapping(path = "{videoId}")
   public ResponseEntity<Video> updateVideo(@PathVariable("videoId") Long videoId, @RequestBody Video video) {
     Optional<Video> videoData = videoRepository.findById(videoId);

@@ -14,10 +14,12 @@ public class ViewFragmentService {
     this.viewFragmentRepository = viewFragmentRepository;
   }
 
+  // returns all view fragments in the repository
   public List<ViewFragment> getViewFragments() {
     return viewFragmentRepository.findAll();
   }
 
+  // adds a view fragment to the repository
   public void addNewViewFragment(ViewFragment viewFragment) {
     viewFragmentRepository.save(viewFragment);
   }

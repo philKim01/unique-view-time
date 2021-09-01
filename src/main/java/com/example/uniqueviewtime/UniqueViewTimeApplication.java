@@ -21,6 +21,7 @@ public class UniqueViewTimeApplication {
 		SpringApplication.run(UniqueViewTimeApplication.class, args);
 	}
 
+	// seeds a sample video with 2 sample fragments
 	@Bean
 	public CommandLineRunner commandLineRunner(VideoRepository videoRepository,
 			ViewFragmentRepository viewFragmentRepository) {
